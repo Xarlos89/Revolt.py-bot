@@ -1,5 +1,5 @@
 from revolt.ext import commands
-from zorak import Zorak
+from client import Zorak
 
 
 class Ping(commands.Cog[Zorak]):

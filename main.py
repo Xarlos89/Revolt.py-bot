@@ -3,7 +3,7 @@ import aiohttp
 import os
 import sys
 from utility.logger import *
-from zorak import Zorak
+from client import Zorak
 
 
 def load_key():
