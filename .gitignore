@@ -1,3 +1,22 @@
+/venv
+/.idea
+*/venv
+*.xml
+*.iml
+.env
+*/__pycache__/*
+.gitattributes
+*/.pyc
+*.pyc
+*.cpython-39.pyc
+*.log
+*.db
+utility/Zorak_logs.txt
+
+###
+# Below here is a general template for files that we dont want to see in Git.
+###
+
 # Thumbnails
 ._*
 
@@ -120,17 +139,3 @@ $RECYCLE.BIN/
 */build/*
 
 
-/venv
-/.idea
-*/venv
-*.xml
-*.iml
-.env
-*/__pycache__/*
-.gitattributes
-*/.pyc
-*.pyc
-*.cpython-39.pyc
-*.log
-*.db
-utility/Zorak_logs.txt
