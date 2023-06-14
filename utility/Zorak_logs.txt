@@ -1,8 +1,9 @@
-2023-06-14 11:30.23 - INFO: Loading Token from environment variable.
-2023-06-14 11:30.23 - INFO: Loading Cogs...
-2023-06-14 11:30.23 - INFO:  - Success.
-2023-06-14 11:30.23 - INFO: Sending hearbeat
-2023-06-14 11:30.24 - INFO: Successfully authenticated
-2023-06-14 11:30.24 - INFO: Zorak is ready to destroy the planet.
-2023-06-14 11:30.38 - INFO: Sending hearbeat
-2023-06-14 11:30.53 - INFO: Sending hearbeat
+2023-06-14 11:43.43 - INFO: Loading Token from environment variable.
+2023-06-14 11:43.43 - INFO: Loading Cogs...
+2023-06-14 11:43.43 - INFO:  - Success.
+2023-06-14 11:43.44 - INFO: Sending hearbeat
+2023-06-14 11:43.44 - INFO: Successfully authenticated
+2023-06-14 11:43.44 - INFO: Zorak is ready to destroy the planet.
+2023-06-14 11:43.59 - INFO: Sending hearbeat
+2023-06-14 11:44.14 - INFO: Sending hearbeat
+2023-06-14 11:44.29 - INFO: Sending hearbeat
