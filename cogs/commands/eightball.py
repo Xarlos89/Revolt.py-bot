@@ -1,13 +1,22 @@
-from revolt.ext import commands
-from client import Zorak
-
+"""
+Command: /eightball [question]
+Description: Asks a magic 8ball a question, and returns an answer
+"""
 from random import choice
+from revolt.ext import commands
+
+from client import Zorak #pylint: disable=E0401
 
 
 class EightBall(commands.Cog[Zorak]):
-
+    """
+    Hosts only the 1 command.
+    """
     @commands.command()
     async def eightball(self, ctx, *question):
+        """
+        Currently uses Kwargs, must be a better way.
+        """
         answer = choice(
             [
                 "It is certain.",
@@ -34,7 +43,8 @@ class EightBall(commands.Cog[Zorak]):
                 "How would i know",
                 "100%",
                 "Think harder",
-                "Sure" "In what world will that ever happen",
+                "Sure",
+                "In what world will that ever happen",
                 "As i see it no.",
                 "No doubt about it",
                 "Focus",
@@ -47,4 +57,7 @@ class EightBall(commands.Cog[Zorak]):
 
 
 def setup(client: Zorak):
+    """
+    Loads the cog into the Client (Zorak)
+    """
     client.add_cog(EightBall())
