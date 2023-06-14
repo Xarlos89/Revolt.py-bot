@@ -1,9 +1,42 @@
+"""
+Our main file, and entrypoint for the bot.
+Here we load the token either in an arg or an env-var,
+and then we run our bot.
+"""
 import asyncio
 import aiohttp
 import os
 import sys
+
 from utility.logger import *
 from client import Zorak
+
+
+async def main():
+    """
+    Main function, loads cogs, then starts the bot.
+    """
+    async with aiohttp.ClientSession() as session:
+        client = Zorak(session, load_key())
+        load_extensions(client)
+        await client.start()
+
+
+def load_extensions(bot):
+    """
+    This function reads through the directory tree in /cogs and
+    loads every .py file it finds in there.
+    """
+    log_info("Loading Cogs...")
+
+    for directory in os.listdir("./cogs"):
+        if not directory.startswith("_"):  # Makes sure __innit.py__ doesnt get called
+            for file in os.listdir(f"./cogs/{directory}"):
+                if file.endswith('.py'):
+                    log_debug(f"Loading Cog: \\{directory}\\{file}")
+                    bot.load_extension(f"cogs.{directory}.{file[:-3]}")
+
+    log_info(" - Success.")
 
 
 def load_key():
@@ -22,14 +55,9 @@ def load_key():
         return os.environ['TOKEN']
 
     else:
-        log_info('ERROR: You must include a bot token.')
+        log_critical('ERROR: You must include a bot token.')
         log_info('Example: "python __main__.py BOT_TOKEN_GOES_HERE"')
 
-
-async def main():
-    async with aiohttp.ClientSession() as session:
-        client = Zorak(session, load_key())
-        await client.start()
 
 asyncio.run(main())
 
