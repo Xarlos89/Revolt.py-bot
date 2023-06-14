@@ -32,7 +32,7 @@ def load_extensions(bot):
     for directory in os.listdir("./cogs"):
         if not directory.startswith("_"):  # Makes sure __innit.py__ doesnt get called
             for file in os.listdir(f"./cogs/{directory}"):
-                if file.endswith('.py'):
+                if file.endswith('.py') and not file.startswith('__init__'):
                     log_debug(f"Loading Cog: \\{directory}\\{file}")
                     bot.load_extension(f"cogs.{directory}.{file[:-3]}")
 
