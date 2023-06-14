@@ -27,7 +27,7 @@ class CatFact(commands.Cog[Zorak]):
                 ).text)["fact"]
             )
         except requests.exceptions.ConnectionError as conn_error:
-            await ctx.send("No response", conn_error)
+            await ctx.send("No response")
 
 
 def setup(client: Zorak):

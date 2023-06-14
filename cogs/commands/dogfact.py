@@ -28,7 +28,7 @@ class DogFact(commands.Cog[Zorak]):
                 ).text)["facts"][0]
             )
         except requests.exceptions.ConnectionError as conn_error:
-            await ctx.send("No response", conn_error)
+            await ctx.send("No response")
 
 
 def setup(client: Zorak):
