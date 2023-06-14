@@ -6,15 +6,14 @@ import json
 import requests
 from revolt.ext import commands
 
-from client import Zorak #pylint: disable=E0401
-
-
+from client import Zorak  # pylint: disable=E0401
 
 
 class CatFact(commands.Cog[Zorak]):
     """
     Hosts only the 1 command.
     """
+
     @commands.command()
     async def catfact(self, ctx):
         """
