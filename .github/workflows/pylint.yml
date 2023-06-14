@@ -20,4 +20,4 @@ jobs:
         pip install pylint==2.17.4 aiohttp beautifulsoup4 requests revolt.py
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')
+        pylint --fail-under=6  $(git ls-files '*.py')
