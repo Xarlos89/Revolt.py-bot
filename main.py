@@ -3,13 +3,13 @@ Our main file, and entrypoint for the bot.
 Here we load the token either in an arg or an env-var,
 and then we run our bot.
 """
-import asyncio
-import aiohttp
 import os
 import sys
+import asyncio
+import aiohttp
 
-from utility.logger import *
-from client import Zorak
+from utility.logger import log_debug, log_info, log_critical  # pylint: disable=E0401
+from client import Zorak  # pylint: disable=E0401
 
 
 async def main():
@@ -50,14 +50,14 @@ def load_key():
         log_info('Loading Token from arg.')
         return token
 
-    elif os.environ['TOKEN'] is not None:  # if not in args, check the env vars
+    if os.environ['TOKEN'] is not None:  # if not in args, check the env vars
         log_info('Loading Token from environment variable.')
         return os.environ['TOKEN']
 
     else:
         log_critical('ERROR: You must include a bot token.')
         log_info('Example: "python __main__.py BOT_TOKEN_GOES_HERE"')
+        return None
 
 
 asyncio.run(main())
-
