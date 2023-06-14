@@ -54,10 +54,9 @@ def load_key():
         log_info('Loading Token from environment variable.')
         return os.environ['TOKEN']
 
-    else:
-        log_critical('ERROR: You must include a bot token.')
-        log_info('Example: "python __main__.py BOT_TOKEN_GOES_HERE"')
-        return None
+    log_critical('ERROR: You must include a bot token.')
+    log_info('Example: "python __main__.py BOT_TOKEN_GOES_HERE"')
+
 
 
 asyncio.run(main())
